@@ -1,8 +1,8 @@
 from django.urls import path
 
-from cats.views import api_posts_detail, cat_list
+from cats.views import CatList, CatDetail
 
 urlpatterns = [
-   path('cats/', cat_list),
-   path('api/v1/posts/<int:pk>/', api_posts_detail),
+   path('cats/', CatList.as_view()),
+   path('api/v1/cats/<int:pk>/', CatDetail.as_view()),
 ]
